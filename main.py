@@ -1,15 +1,23 @@
 from spy_details import spy, Spy, ChatMessage, friends
-from steganography.steganography import Steganography
-from datetime import datetime
+from steganography.steganography import Steganography                                                        #This steganography module is used for encoding and decoding messages
+from datetime import datetime                                                                                #This datetime module i used for displaying date and time in the displaying screen in the chat history
+from termcolor2 import colored                                                                               #This termcolor module is used for displaying various colred text in the display screen
+text =[]                                                                                                     #List created for sending and recieving messages
 
+#These are the older status from which the user has to select
 Status_Message = ["Once a spy always a spy.", 'You are not just a freaking agent you are more than that you are a spy.', 'Spy are always super cool']
 
-print "Hey There! \nThis is SpyChat \nSo, Let's get started"
+#THis is the welcome message whioch is to displayed to the user
+print colored("Hey There!","red")
+print colored ("This is SpyChat","blue")
+print colored ("So, Let's get started","green")
 
+#This statement is used if the user is the main user then he can continue as the main or otherwise he has to input the user details
 question = "Do you want to continue as " + spy.salutation + " " + spy.name + " (Y/N)? "
 existing = raw_input(question)
 
 
+#This is the function used for adding friends in the SpyChat
 def add_status():
     updated_status_message = None
 
@@ -17,7 +25,7 @@ def add_status():
 
         print 'Your current status message is %s \n' % (spy.current_status_message)
     else:
-        print "You don't have any status message currently \n"
+        print colored ("You don't have any status message currently \n",'blue')
 
     default = raw_input("Do you wanna select from the older status (y/n)? ")
 
@@ -52,6 +60,7 @@ def add_status():
     return updated_status_message
 
 
+#This is the function used for adding friends in the SpyChat
 def add_friend():
     new_friend = Spy('', '', 0, 0.0)
 
@@ -70,11 +79,12 @@ def add_friend():
         friends.append(new_friend)
         print 'Yeah! Friend Added'
     else:
-        print "Sorry! \nIt's an invalid entry. \nWe can't add spy with such details which were provided by you on SpyChat"
+        print colored ("Sorry! \nIt's an invalid entry. \nWe can't add spy with such details which were provided by you on SpyChat", 'red')
 
     return len(friends)
 
 
+#This is the function used for selecting a friend from the older friends
 def select_a_friend():
     item_number = 0
 
@@ -91,12 +101,14 @@ def select_a_friend():
     return friend_choice_position
 
 
+#This is the function used for sending messages to other spies
 def send_message():
     friend_choice = select_a_friend()
 
     original_image = raw_input("What is the name of the image?")
     output_path = "output.jpg"
-    text = raw_input("What do you want to say? ")
+    text = raw_input("What do you wanna say? ")
+    print "Your image is loading...."
     Steganography.encode(original_image, output_path, text)
 
     new_chat = ChatMessage(text, True)
@@ -106,20 +118,31 @@ def send_message():
     print "Your secret message image is ready!"
 
 
+#This is the function used for reading messages from other spies
 def read_message():
     sender = select_a_friend()
 
     output_path = raw_input("What is the name of the file?")
 
-    secret_text = Steganography.decode(output_path)
+    text = Steganography.decode(output_path)
 
-    new_chat = ChatMessage(secret_text, False)
+    #These statements are used if user inputs special terms so a special message will be displayed on the displayed screen
+    print "Decode Messsages: %s" % text
+    if text == "sos":
+        print "Emergency Time"
+    elif text == "save me":
+        print "We are comming to rescue you"
+    elif len(text) == 0:
+        print "There is't any secret message avilable"
+
+    new_chat = ChatMessage(text, False)
 
     friends[sender].chats.append(new_chat)
 
     print "Your secret message has been saved!"
 
 
+#This is the function used for reading the chat history of the spies
 def read_chat_history():
     read_for = select_a_friend()
 
@@ -127,21 +150,35 @@ def read_chat_history():
 
     for chat in friends[read_for].chats:
         if chat.sent_by_me:
-            print '[%s] %s: %s' % (chat.time.strftime("%d %B %Y"), 'You said:', chat.message)
+
+            #These statements are used for displaying date time and message in different colors
+            print colored ('%s'% chat.time.strftime("%A %d %B %Y %H:%M:%S"),"blue")
+            print colored("You Said:","red")
+            print('%s'% chat.message)
         else:
-            print '[%s] %s said: %s' % (chat.time.strftime("%d %B %Y"), friends[read_for].name, chat.message)
+            print colored('%s' % chat.time.strftime("%A %d %B %Y %H:%M:%S"), "blue")
+            print colored(friends[read_for].name, 'red')
+            print colored('%s' % chat.message)
+
+            #this statement is used if the words used in the chats exceeds the 100 then the friend or the spy will be deleted
+            text = text.split()
+            if len(text) >= 100:
+                del friends
 
 
+#This is the function used for starting the cahts within the spies
 def start_chat(spy):
     spy.name = spy.salutation + " " + spy.name
 
     if spy.age > 12 and spy.age < 50:
 
-        print "Authentication complete. \nWelcome " + spy.name + "\n of age: " \
-              + str(spy.age) + "\nwith rating of: " + str(spy.rating) + " Proud to have you on SpyChat"
+        print colored ("Authentication complete. \nWelcome " + spy.name + "\n of age: " \
+              + str(spy.age) + "\nwith rating of: " + str(spy.rating) + " \nProud to have you with us on SpyChat", 'green')
 
+#These statements are used for the menu which will be displayed to the user what task he wanna perform
         show_menu = True
 
+#This is the loop statement for the menu which will ask the again and again what he wanna do
         while show_menu:
             menu_choices = "What do you wanna do? \n 1. Add a status update \n 2. Add a friend \n 3. Select a friend \n 4. Send a secret message to friends \n 5. Read a secret message from friends \n 6. Read Chats from a friends \n 7. Close the SpyChat \n"
             menu_choice = raw_input(menu_choices)
@@ -166,13 +203,15 @@ def start_chat(spy):
                 else:
                     show_menu = False
     else:
-        print 'Sorry! you are not of the proper age to be a spy'
+        print colored ('Sorry! you are not of the proper age to be a spy','red')
 
 
-if existing == "Y":
+#This is the condtional statement which is used if the user is the main user then then can directly acesses SpyChat with inputing the user details
+if existing == "Y" or 'y':
     start_chat(spy)
 else:
 
+    #These statements are used if the user is not the main user then he or she will have to input the user details
     spy = Spy('', '', 0, 0.0)
 
     spy.name = raw_input("Welcome to spy chat, \nYou must tell me your spy name first: ")
@@ -188,4 +227,4 @@ else:
 
         start_chat(spy)
     else:
-        print 'Please enter a valid spy name'
+        print colored ('Please enter a valid spy name','blue')

@@ -1,3 +1,4 @@
+#This is the file where user had inputed all the details which are used in SpyChat
 from datetime import datetime
 
 class Spy:
@@ -21,9 +22,9 @@ class ChatMessage:
 
 spy = Spy('Manish', 'Mr.', 21, 4.9)
 
-friend_one = Spy('Sarabjeet', 'Mr.', 20, 4.3)
-friend_two = Spy('Manila', 'Mrs.', 22, 4.75)
-friend_three = Spy('Aliza', 'Dr.', 23, 4.99)
+friend_one = Spy('Sarabjeet', 'Mr.', 21, 4.3)
+friend_two = Spy('Prashant', 'Mr.', 22, 4.75)
+friend_three = Spy('Manila', 'Mrs.', 20, 4.99)
 
 
 friends = [friend_one, friend_two, friend_three]
