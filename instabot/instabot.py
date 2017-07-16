@@ -3,7 +3,7 @@ from termcolor import colored                                                   
 from graph import generate_words                                                                                #This statement is used for importing the generate_word function from graph file
 
 #This is access token generated from instagram api
-APP_ACCESS_TOKEN = ''                                                                                           #In the single quotes the acess token is the entered for running the InstaBot
+APP_ACCESS_TOKEN = '5699354201.84f41b4.ed09b770a9654eeaa2c2bcd68fdc8d30'                                                                                           #In the single quotes the acess token is the entered for running the InstaBot
 
 BASE_URL = 'https://api.instagram.com/v1/'
 
