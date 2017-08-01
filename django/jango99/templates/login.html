@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    body {
+      text-align: center;
+      background-position:center;
+      font-family: helvetica;
+    }
+
+    input{
+      border:0;
+      padding:10px;
+      font-size:23px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sign In </h1>
+  <form method="POST">
+      {% csrf_token %}
+   <input type="username" placeholder="User Name" name="username" >
+<br>
+
+  <input type="password" placeholder="Password" name="password" >
+<br>
+      <input class="button" type="submit" value="SignIn">
+  </form>
+</body>
