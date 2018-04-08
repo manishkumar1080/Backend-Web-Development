@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Alexify</title>
+<link rel="icon" href="img/logo.png" type="image/gif" sizes="16x16">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+      
+    <link href="css/hover.css" rel="stylesheet">
+	
+    <link href="css/custom.css" rel="stylesheet">
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	
+    <script src="https://use.fontawesome.com/c2854c2e83.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+      
+      <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+      
+       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+	 
+      <style>
+		
+	 </style>
+	
+    </head>
+  
+<body>
+  
+  
+        <div class="container "id="first" >
+            <img class="full animated fadeIn" src="img/part2.jpeg">
+            <div class="row">
+                <div class="col-md-6"></div>
+
+                <div class="col-md-6">
+
+                    <div>
+                        <h1 class="heading animated fadeInDown">Alexify  <i class="fa fa-music animated rotateIn"style="color:#d9534f;" aria-hidden="true"></i></h1>
+                    </div>
+
+                    <div class="space" style="height:140px;">
+                    </div>
+            
+                    <center>
+                        
+                    <div class="loginbox animated bounceIn">
+                        <form class="enterform">
+                            <div class="form-group">
+                                <label for="usr">Username:</label>
+                                <input type="text" class="form-control"placeholder="Enter Username" id="usr">
+                            </div>
+                        <div class="form-group">
+                                <label for="pwd">Password:</label>
+                                <input type="password" class="form-control"placeholder="Enter Password" id="pwd">
+                        </div>
+                        </form>
+                        <button class="btn btn-danger" id="change">login</button>
+                    </div>
+
+                    </center>
+                </div>
+        </div>
+    </div>
+
+
+
+        <section class="hidden " id="two">
+
+            <img class="full animated fadeIn" src="img/guitar.jpeg">
+
+            <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>                        
+                              </button>
+                              <a class="navbar-brand" href="#"style="color:#333333;margin-left:25px;">Alexify <i class="fa fa-music animated rotateIn"style="color:#d9534f;" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="piano.html"class="whitenav"id="piano">Piano <i class="fa fa-keyboard-o red" aria-hidden="true"></i></a></li>
+                                <li><a href="drumkit.html"class="whitenav"id="drum">Drum Kit <i class="fa fa-dot-circle-o red" aria-hidden="true"></i></a></li>
+                             </ul>
+                            <form class="navbar-form navbar-left">
+                                  <div class="input-group"id="search">
+                                    <input type="text" class="form-control" placeholder="Search"id="myInput"onkeyup="searchFunction()">
+                                    <div class="input-group-btn">
+                                      <button class="btn btn-default" type="submit">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                            </form>
+
+                          <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"class="whitenav"><i class="fa fa-apple red" aria-hidden="true"></i>  <i class="fa fa-android red" aria-hidden="true"></i>   Download App</a></li>
+                            <li><a href="#" class="whitenav"><i class="fa fa-user red" aria-hidden="true"></i>  <span class="username"></span></a></li>
+                          </ul>
+                        </div>
+                </div>
+        </nav>
+
+
+        <div class="container-fluid "id="mood">
+                <div class="row" >
+
+                    <div class="col-md-2">
+
+                    </div>
+
+                    <div class="col-md-8" style="text-align:center;">
+                            <div class="col-md-4">
+                                    <div class="box mood1">
+                                    <img src="img/romantic.jpeg"class="boximg hvr-grow rclass"name="romantic">
+                                    <h3 class="mood-name">Romantic</h3>
+                                    </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="box  mood2">
+                                <img src="img/english.jpg"class="boximg hvr-grow eclass "name="english">
+                                <h3 class="mood-name">English</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="box  mood3">
+                                <img src="img/rock.jpeg"class="boximg hvr-grow iclass"name="indopop">
+                                    <h3 class="mood-name">IndoPop</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="box mood4">
+                                <img src="img/oldgold.png"class="boximg hvr-grow oclass"name="oldgold">
+                                <h3 class="mood-name">Old Is Gold</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="box mood5">
+                                <img src="img/mashup.jpg"class="boximg hvr-grow mclass"name="mashup">
+                                <h3 class="mood-name">Mashups</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="box  mood6">
+                                <img src="img/party.png"class="boximg hvr-grow pclass"name="party">
+                                <h3 class="mood-name">Party</h3>
+                                </div>
+                            </div>
+
+                    </div>
+
+                    <div class="col-md-2"></div>
+
+                </div>
+            </div>  
+        </section>
+
+
+
+
+
+
+
+
+        <div class="container-fluid hidden" id="player-list"style="margin-top: 40px;color:chartreuse;">
+                <div class="col-md-12">
+                    <section class="listbox">
+                            <audio src=""id="audioElement"></audio>
+                            <div class="col-md-2"></div>
+                             <div class="col-md-8">
+                            <div class="table-responsive"style="background: rgba(0,0,0,0.6);font-size: 10px;">      
+
+                                  <table class="table" id="myTable">
+                                    <thead>
+                                      <tr>
+                                        <th>S.No.</th>
+                                        <th>Name</th>
+                                        <th>Singers</th>
+                                        <th>Album</th>
+                                        <th>Duration</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr id="song1"class="">
+                                        <td>1</td>
+                                        <td class="song-name"></td>
+                                        <td class="song-artist"></td>
+                                        <td class="song-album"></td>
+                                        <td class="song-length"></td>
+                                      </tr>  
+                                        <tr id="song2"class="">
+                                        <td>2</td>
+                                        <td class="song-name"></td>
+                                        <td class="song-artist"></td>
+                                        <td class="song-album"></td>
+                                        <td class="song-length"></td>
+                                      </tr>
+                                        <tr id="song3"class="">
+                                        <td>3</td>
+                                        <td class="song-name"></td>
+                                        <td class="song-artist"></td>
+                                        <td class="song-album"></td>
+                                        <td class="song-length"></td>
+                                      </tr>
+                                        <tr id="song4"class="">
+                                        <td>4</td>
+                                        <td class="song-name"></td>
+                                        <td class="song-artist"></td>
+                                        <td class="song-album"></td>
+                                        <td class="song-length"></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                          </div>
+                            </div>
+                         <div class="col-md-2"></div>
+                </section>    
+            </div>    
+
+                    <div class="col-md-12">
+                        <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <div class="col-md-3 hidden-xs"style="margin-top: 90px;">
+                                    <img class="current-song-image"src="">
+                                    <h4 class="current-song" style="margin-bottom: 0"></h4>
+                                    <p class="current-album"></p>
+                                </div>
+                                <div class="col-md-9">
+                                    <div id="vis"class="hidden-xs"style="text-align: center;"></div>
+                                </div>
+                            </div>
+                        <div class="col-md-2"></div>
+                    </div>    
+
+
+                     <footer class="player">
+                        <div class="progress">
+                               <p class="currentTime"></p> <div class="progress-bar"></div><p class="duration"></p>
+                        </div>
+                        <i class="fa fa-backward playericon"></i>
+                        <i class="fa fa-play playericon play-icon"style="margin:0 30px 0 30px;"></i> 
+                        <i class="fa fa-forward playericon"></i>
+                </footer> 
+
+                    <div style="position: fixed;left: 8%;display: grid;bottom: 10%;">
+                            <i class="fa fa-repeat playericon side-controls animated rotateIn" aria-hidden="true"></i>
+                            <i class="fa fa-plus playericon side-controls animated rotateIn" aria-hidden="true"onclick="document.getElementById('audioElement').volume+=0.2"data-toggle="popoverIncrease" title="Volume Increased"></i>
+                            <i class="fa fa-minus playericon side-controls animated rotateIn" aria-hidden="true"onclick="document.getElementById('audioElement').volume-=0.2"data-toggle="popoverDecrease" title="Volume Decreased"></i>
+                            <i class="fa fa-random playericon side-controls animated rotateIn" aria-hidden="true"></i>
+                            <i class="fa fa-microphone playericon side-controls animated rotateIn"id="listen" aria-hidden="true"></i>
+                    </div>
+
+
+        </div>
+
+
+
+
+    
+    
+    
+<script>
+
+   
+    
+    
+
+    
+    
+    
+</script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/custom.js"></script>
+    <script src="js/visualizer.js"></script>
+    <script src="js/rs.speech.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	 <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js">
+    </script>
+  </body>
+</html>
